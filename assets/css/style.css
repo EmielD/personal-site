@@ -1,0 +1,61 @@
+:root{
+    color-scheme: light dark;
+    --container-bg: rgb(39, 39, 39);
+    
+    
+    --light-bg: white;
+    --light-color: black;
+
+    --dark-bg: black;
+    --dark-color: white;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
+    color: light-dark(var(--light-color), var(--dark-color));
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    background-color: var(--container-bg);
+}
+
+.container{
+    border-radius: 5px;
+    background-color: var(--container-bg);
+    text-align: center;
+    max-width: 500px;
+    padding: 20px;
+    margin-top: 20px;
+    margin: 20px;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    padding-top: 25px;
+    background-color: var(--container-bg);
+    text-align: center;
+}
+
+.heart{
+    color: red;
+}
