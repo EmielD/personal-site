@@ -1,112 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap");
 
-:root{
-    color-scheme: light dark;
-    --container-bg: rgb(39, 39, 39);
-    --theme-bg: light-dark(var(--light-bg), var(--dark-bg));
-    --theme-color: light-dark(var(--light-color), var(--dark-color));
-    --theme-container-bg: light-dark(var(--light-container-bg), var(--dark-container-bg));
-    
-    --light-bg: white;
-    --light-color: black;
+:root {
+  color-scheme: light dark;
+  --container-bg: rgb(39, 39, 39);
+  --theme-bg: light-dark(var(--light-bg), var(--dark-bg));
+  --theme-color: light-dark(var(--light-color), var(--dark-color));
+  --theme-container-bg: light-dark(
+    var(--light-container-bg),
+    var(--dark-container-bg)
+  );
 
-    --dark-bg: #508BCD;
-    --dark-color: white;
+  --light-bg: white;
+  --light-color: black;
 
-    --light-container-bg: rgb(117, 117, 117);
-    --dark-container-bg: rgba(46, 46, 46, 0.9);
+  --dark-bg: #508bcd;
+  --dark-color: white;
+
+  --light-container-bg: rgb(117, 117, 117);
+  --dark-container-bg: rgba(46, 46, 46, 0.9);
 }
 
-*, *::before, *::after{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--theme-bg);
-    color: var(--theme-color);
-    min-height: 100vh;
-    font-family: "Quicksand", serif;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: var(--theme-bg);
+  color: var(--theme-color);
+  min-height: 100vh;
+  font-family: "Quicksand", serif;
 }
 
-.cloud{
-    display: block;
-    transform: scale(0.5);
+.menu {
+  text-align: center;
+  border-radius: 20px;
+  background-color: var(--theme-container-bg);
+
+  width: 100px;
+  padding: 20px;
+
+  margin-top: 20px;
+  margin-right: 20px;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 50vh;
-    margin-bottom: 50px;
-    padding-bottom: 2rem;
+.cloud {
+  display: block;
+  transform: scale(0.5);
 }
 
-header>svg>path{
-    fill: transparent;
-    stroke: white;
-    stroke-width: 1;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: titleAnimation 4s ease-in-out 1 forwards;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50vh;
+  margin-bottom: 50px;
+  padding-bottom: 2rem;
+}
+
+header > svg > path {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 1;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: titleAnimation 6s ease-in-out 1 forwards;
 }
 @keyframes titleAnimation {
-    0%{
-        stroke-dashoffset: 1000;
-    }
-    25%{
-        fill: transparent;
-    }
-    80%{
-        fill: white;
-    }
-    100%{
-        fill: white;
-        stroke-dashoffset: 0;
-    }
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  25% {
+    fill: transparent;
+  }
+  80% {
+    fill: white;
+  }
+  100% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
 }
 
-header>h2{
-    padding-top: 20px;
+header > h2 {
+  padding-top: 20px;
 }
 
-header>h3{
-    padding-top: 10px;
-    font-style: italic;
+header > h3 {
+  padding-top: 10px;
+  font-style: italic;
 }
 
-.container{
-    border-radius: 5px;
-    background-color: var(--theme-container-bg);
-    text-align: center;
-    width: min(90%, 500px);
-    padding: 20px;
-    margin-top: 20px;
-    margin: 20px auto ;
+.container {
+  border-radius: 5px;
+  background-color: var(--theme-container-bg);
+  text-align: center;
+  width: min(90%, 500px);
+  padding: 20px;
+  margin-top: 20px;
+  margin: 20px auto;
 }
 
-.container>h2{
-    padding-bottom: 20px;
-    font-size: 2rem;
+.container > h2 {
+  padding-bottom: 20px;
 }
 
-footer{
-    width: 100%;
-    padding: 1rem;
-    margin-top: 50px;
-    padding-top: 25px;
-    background-color: var(--theme-container-bg);
-    text-align: center;
+footer {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 50px;
+  padding-top: 25px;
+  background-color: var(--theme-container-bg);
+  text-align: center;
 }
 
-.heart{
-    color: red;
+.heart {
+  color: red;
 }
