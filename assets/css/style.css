@@ -17,7 +17,7 @@
   --dark-color: white;
 
   --light-container-bg: rgb(117, 117, 117);
-  --dark-container-bg: rgba(46, 46, 46, 0.9);
+  --dark-container-bg: rgba(46, 46, 46, 0.5);
 }
 
 *,
@@ -26,6 +26,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -60,6 +64,14 @@ nav {
   background-color: var(--theme-container-bg);
   width: 100px;
   border-radius: 20px;
+}
+
+.github {
+  display: block;
+  width: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets//images/github-dark.svg");
 }
 
 .cloud {
@@ -120,17 +132,58 @@ hr {
   background-color: white;
 }
 
-.scrolldown-button{
+.scrolldown-button {
   position: absolute;
   margin-top: 75vh;
   height: 25px;
   width: 25px;
-  background-image: url("/assets/images/scrolldown-elipse.svg"), url("/assets/images/scrolldown-vector.svg");
+  background-image: url("/assets/images/scrolldown-elipse.svg");
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  animation: scrollDownElipseAppearance 1s 3s ease-in 1 forwards,
+    scrollDownElipseShadowBlur 2s 4s ease-in-out infinite forwards;
+}
+@keyframes scrollDownElipseAppearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+@keyframes scrollDownElipseShadowBlur {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
 }
 
-.container::before{
+.scrolldown-vector {
+  background-image: url("/assets/images/scrolldown-vector.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  animation: scrolldownVectorAnimation 1s ease-in-out infinite alternate;
+}
+@keyframes scrolldownVectorAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+.container::before {
   content: "";
 
   margin-top: -50px;
@@ -142,6 +195,8 @@ hr {
 }
 
 .container {
+  scroll-margin-top: 80px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,7 +206,7 @@ hr {
   border-radius: 5px;
   background-color: var(--theme-container-bg);
   text-align: center;
-  width: min(90%, 500px);
+  width: min(70%, 500px);
   padding: 20px;
   margin: 200px auto;
 }
