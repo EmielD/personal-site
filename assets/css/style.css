@@ -42,12 +42,29 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   text-align: center;
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  nav .theme-toggle {
+    margin-right: 5px;
+    width: 50px;
+  }
+
+  nav .links{
+    margin-top: 5px;
+    margin-right: 5px;
+  }
 }
 
 .theme-toggle {
@@ -59,10 +76,10 @@ nav {
 }
 
 .links {
-  margin-left: 20px;
+  margin-left: 5px;
   padding: 10px;
   background-color: var(--theme-container-bg);
-  width: 100px;
+  width: 50px;
   border-radius: 20px;
 }
 
@@ -136,8 +153,8 @@ hr {
 .scrolldown-button {
   position: absolute;
   margin-top: 75vh;
-  height: 25px;
-  width: 25px;
+  height: 50px;
+  width: 50px;
   background-image: url("/assets/images/scrolldown-elipse.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -146,7 +163,7 @@ hr {
   visibility: hidden;
   pointer-events: none;
   animation: scrollDownElipseAppearance 1s 3s ease-in 1 forwards,
-    scrollDownElipseShadowBlur 2s 4s ease-in-out infinite forwards;
+    scrollDownElipseShadowBlur 2s 4.5s ease-in-out infinite forwards;
 }
 @keyframes scrollDownElipseAppearance {
   0% {
@@ -163,7 +180,7 @@ hr {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
   }
   100% {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, 0);
   }
 }
 
@@ -180,7 +197,7 @@ hr {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(5px);
+    transform: translateY(10px);
   }
 }
 
